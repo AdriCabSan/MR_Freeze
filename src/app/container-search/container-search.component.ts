@@ -9,35 +9,19 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class ContainerSearchComponent implements OnInit {
   source =   [
     {
-      "id": 1,
-      "containerType": "Danielle Kennedy",
-      "owner": "danielle.kennedy",
-      "description": "danielle_91@example.com"
+      "id": 20,
+      "containerType": "Fridge",
+      "owner": "Soriana",
+      "description": "Contiene jamón y queso"
     },
-    {
-      "id": 2,
-      "containerType": "Russell Payne",
-      "owner": "russell.payne",
-      "description": "russell_88@example.com"
-    },
-    {
-      "id": 3,
-      "containerType": "Brenda Hanson",
-      "owner": "brenda.hanson",
-      "description": "brenda97@example.com"
-    },
-    {
-      "id": 4,
-      "containerType": "Nathan Knight",
-      "owner": "nathan.knight",
-      "description": "nathan-85@example.com"
-    }
+    
   ];
   settings =   {
     "columns": {
       "id": {
         "title": "ID",
-        "filter": true
+        "filter": true,
+        "editable": false
       },
       "containerType": {
         "title": "Container Type",
