@@ -10,20 +10,16 @@ export class ContainerSearchComponent implements OnInit {
   settings = {
     columns: {
       id: {
-        title: "ID",
-        filter: true
+        title: "ID"
       },
       containerType: {
-        title: "Container Type",
-        filter: true
+        title: "Container Type"
       },
       owner: {
-        title: "Owner",
-        filter: true
+        title: "Owner"
       },
       description: {
-        title: "Description",
-        filter: true
+        title: "Description"
       }
     }
   };
