@@ -7,50 +7,36 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContainerSearchComponent implements OnInit {
-  source =   [
-    {
-      "id": 20,
-      "containerType": "Fridge",
-      "owner": "Soriana",
-      "description": "Contiene jamón y queso"
-    },
-    
-  ];
-  settings =   {
-    "columns": {
-      "id": {
-        "title": "ID",
-        "filter": true,
-        "editable": false
+  settings = {
+    columns: {
+      id: {
+        title: "ID",
+        filter: true
       },
-      "containerType": {
-        "title": "Container Type",
-        "filter": true
+      containerType: {
+        title: "Container Type",
+        filter: true
       },
-      "owner": {
-        "title": "Owner",
-        "filter": true
+      owner: {
+        title: "Owner",
+        filter: true
       },
-      "description": {
-        "title": "Description",
-        "filter": true
+      description: {
+        title: "Description",
+        filter: true
       }
-    },
-    "delete": {
-      "confirmDelete": true
-    },
-    "add": {
-      "confirmCreate": true
-    },
-    "edit": {
-      "confirmSave": true
-    },
-    "actions": {
-      "add": true,
-      "edit": true,
-      "delete": true
     }
   };
+
+  //Default data
+  data = [
+    {
+      id: 10,
+      containerType: "Fridge",
+      owner: "Soriana",
+      description: "At the moment, it just contains ham and cheese"
+    },
+  ];
 
   constructor() { }
 

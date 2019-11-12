@@ -6,12 +6,15 @@ import { ContainerSearchComponent } from './container-search.component';
 import { Space61Component } from './space61/space61.component';
 import { SharedModule } from '../shared/shared.module';
 
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 @NgModule({
   declarations: [ContainerSearchComponent, Space61Component],
   imports: [
     CommonModule,
     ContainerSearchRoutingModule,
-    SharedModule
+    SharedModule,
+    Ng2SmartTableModule
   ]
 })
 export class ContainerSearchModule { }

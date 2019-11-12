@@ -25,7 +25,7 @@ export class SidebarComponent {
       children: null
     },
     {
-      title: 'ContainerDahsboard',
+      title: 'Container Dashboard',
       link: '/ContainerDahsboard',
       children: null
     }
