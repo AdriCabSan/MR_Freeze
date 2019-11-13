@@ -1,6 +1,7 @@
 @import 'themes';
 @import '~@nebular/theme/styles/globals';
 @import '~@uibakery/kit/styles.scss';
+@import '~ngx-toastr/toastr';
 
 $nb-enable-css-custom-properties: true;
 $nb-enabled-themes: (light);

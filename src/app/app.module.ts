@@ -21,6 +21,8 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SharedModule } from './shared/shared.module';
 import { LIGHT_THEME } from './theme';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { LIGHT_THEME } from './theme';
     SharedModule,
     AppRoutingModule,
     NbButtonModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
