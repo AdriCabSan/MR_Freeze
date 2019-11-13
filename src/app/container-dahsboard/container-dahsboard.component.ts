@@ -28,7 +28,7 @@ export class ContainerDahsboardComponent implements OnInit {
         responsive: true,
         title: {
           display: true,
-          text: 'Temperatura'
+          text: 'Temperature'
         },
         scales: {
           yAxes: [{
@@ -47,7 +47,7 @@ export class ContainerDahsboardComponent implements OnInit {
       },
       data: {
         datasets: [{
-            label: 'Mediciones',
+            label: 'Measurements',
             backgroundColor: 'rgba(51,102,255,0.6)',
             borderColor: 'blue',
             fill: true,
@@ -62,7 +62,7 @@ export class ContainerDahsboardComponent implements OnInit {
         responsive: true,
         title: {
           display: true,
-          text: 'Humedad'
+          text: 'Humidity'
         },
         scales: {
           yAxes: [{
@@ -81,7 +81,7 @@ export class ContainerDahsboardComponent implements OnInit {
       },
       data: {
         datasets: [{
-            label: 'Mediciones',
+            label: 'Measurements',
             backgroundColor: 'rgba(22, 78, 22, 0.60)',
             borderColor: 'black',
             fill: true,
@@ -116,6 +116,9 @@ export class ContainerDahsboardComponent implements OnInit {
                 dataset.data.shift(sensor_data);
             });    
         }
+        if(sensor_data > 20){
+          this.showWarning("Warning", "If this temperature continues, the products can waste.");
+        }
     chart.update();
   }
 
@@ -123,14 +126,17 @@ export class ContainerDahsboardComponent implements OnInit {
     chart.data.labels.push(moment().format("hh:mm:ss a"));
     chart.data.datasets.forEach(dataset => {
          dataset.data.push(sensor_data);
-     });    
-     this.counterHum++
-     if (this.counterHum > 13){
-         chart.data.labels.shift(this.counterHum);
-         chart.data.datasets.forEach(dataset => {
-             dataset.data.shift(sensor_data);
-         });    
-     }
+    });    
+    this.counterHum++
+    if (this.counterHum > 13){
+        chart.data.labels.shift(this.counterHum);
+        chart.data.datasets.forEach(dataset => {
+            dataset.data.shift(sensor_data);
+        });    
+    } 
+    if(sensor_data > 50){
+      this.showWarning("Warning", "If this humidity continues, the products can waste.");
+    }
     chart.update();
   }
 
