@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { WebsocketService } from './services/websocket.service';
 import { Chart } from 'chart.js';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-container-dahsboard',
@@ -11,8 +12,8 @@ import * as moment from 'moment';
 })
 export class ContainerDahsboardComponent implements OnInit {
   title = 'sffront';
-  constructor(private webSocketService : WebsocketService) {
-
+  constructor(private webSocketService : WebsocketService, private toastr : ToastrService) {
+    
   }
 
   chartTemperature = [];
@@ -21,7 +22,6 @@ export class ContainerDahsboardComponent implements OnInit {
   counterTemp=0;
 
   ngOnInit(): void {
-   
     this.chartTemperature = new Chart('temperature', {
       type: 'line',
       options: {
@@ -131,6 +131,26 @@ export class ContainerDahsboardComponent implements OnInit {
              dataset.data.shift(sensor_data);
          });    
      }
- chart.update();
+    chart.update();
+  }
+
+  showToast(title, body) {
+    this.toastr.show(title, body);
+  }
+
+  showInfo(title, body) {
+    this.toastr.info(title, body);
+  }
+
+  showSuccess(title, body) {
+    this.toastr.success(title, body);
+  }
+
+  showError(title, body) {
+    this.toastr.error(title, body);
+  }
+
+  showWarning(title, body) {
+    this.toastr.warning(title, body);
   }
 }
