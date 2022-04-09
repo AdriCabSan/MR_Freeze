@@ -32,7 +32,7 @@
     "echarts": "4.2.1",
     "eva-icons": "^1.1.1",
     "leaflet": "1.4.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nebular-icons": "^1.1.0",
     "ng2-completer": "2.0.8",
     "ng2-smart-table": "1.4.0",
